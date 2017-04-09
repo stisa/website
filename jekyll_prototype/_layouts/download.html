@@ -5,12 +5,17 @@
     {% include header.html %}
     <div class="site-content">
       <section class="content pure-g {{page.platform | downcase}}">
-        <h1 class="page-title">
-	  <a href="{{ site.baseurl }}/download-{{page.platform | downcase}}/" class="pure-u-1 text-centered">
-		  <i class="fa fa-{{page.fa|downcase}} download-tile-icon"></i>
-		  {{page.title}}
-	  </a>
-        </h1>
+
+      <h1 class="page-title pure-u-1">
+        <span>
+        <a href="{{ site.baseurl }}/download-{{page.platform | downcase}}/" class="pure-u-1 text-centered">
+          <i class="fa fa-{{page.fa|downcase}} download-tile-icon"></i>
+          {% if page.platform == "Others" %}
+            {{page.title}}
+          {% endif %}
+        </a>
+        </span>
+      </h1>
 	    {{ content }}
       </section>
     </div>

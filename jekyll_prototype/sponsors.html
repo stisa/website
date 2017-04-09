@@ -3,7 +3,7 @@ layout: page
 title: Sponsors
 ---
 <style>
-.pad {padding : 1em; }
+.doubleborderchilds > * { border-bottom: 0.1em black double;}
 </style>
 <section class="content sponsors">
   <!-- X donations and counting! -->
@@ -12,9 +12,9 @@ title: Sponsors
   This section lists the companies and individuals that are, very kindly, contributing a monthly amount to help sustain Nim development. For more details take a look at the <a href="https://salt.bountysource.com/teams/nim">Bountysource campaign</a>.
   <p><small>Last updated: <time>08/01/2017</time></small></p><!--TODO use _config.yml to update this-->
   </h3>
-  <div class="pure-g">
+  <div class="pure-g doubleborderchilds">
 	  {% for sponsor in site.data.sponsors %}
-    <div class="pure-u-1 pure-u-md-1-3 pad">
+    <div class="pure-u-1 pure-u-md-1-2">
 	    {% if sponsor.url%}
 	    <h2><a href="{{sponsor.url}}">{{sponsor.name}}</a></h2>
 	    {% else %}
@@ -29,13 +29,13 @@ title: Sponsors
     {% endfor %}
   </div>
 </section>
-<section class="past-sponsors">
+<section class="content past-sponsors">
   <h1 class="text-centered page-title">Past sponsors</h1>
   <h3 class="text-centered page-subtitle">
   This section lists the companies and individuals that contributed financially to Nim development in the past.</h3>
-  <div class="pure-g">
+  <div class="pure-g doubleborderchilds">
     {% for sponsor in site.data.inactive_sponsors %}
-    <div class="pure-u-1 pure-u-md-1-3 pad">
+    <div class="pure-u-1 pure-u-md-1-3">
 	    <h2>{{sponsor.name}}</h2>
 	    Donated <strong>${{sponsor.all_time}}</strong> in total since {{sponsor.since}}  
     </div>
